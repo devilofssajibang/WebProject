@@ -10,7 +10,7 @@ export default function Sidebar({ posts }) {
       <div className="brand">
         <Link href="/" className="name">
           {config.initials}
-          <sup>®</sup> {config.siteName}
+        
         </Link>
         <div className="tagline">{config.description}</div>
       </div>
