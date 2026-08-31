@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 function RichText({ richText }) {
   if (!richText?.length) return null;
   return richText.map((t, i) => {
@@ -50,10 +48,15 @@ export default function BlockRenderer({ blocks }) {
           case "image": {
             const src = value.file?.url || value.external?.url;
             if (!src) return null;
+            // 본문 사진은 비율을 강제로 자르지 않고 원본 그대로 보여줍니다.
             return (
-              <div key={id} style={{ position: "relative", width: "100%", aspectRatio: "3 / 2" }}>
-                <Image src={src} alt="" fill sizes="760px" style={{ objectFit: "cover" }} />
-              </div>
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                key={id}
+                src={src}
+                alt=""
+                style={{ width: "100%", height: "auto", display: "block" }}
+              />
             );
           }
           case "quote":
