@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Image from "next/image";
 import Link from "next/link";
 import Layout from "@/components/Layout";
 import BlockRenderer from "@/components/BlockRenderer";
@@ -29,18 +28,19 @@ export default function Post({ post, blocks, posts }) {
 
           <div className="meta-table">
             <div className="meta-row">
-              <span>category</span>
-              <span>{post.category || "log"}</span>
+              <span>분류</span>
+              <span>{post.category || "기록"}</span>
             </div>
             <div className="meta-row">
-              <span>date</span>
+              <span>날짜</span>
               <span>{formatDate(post.date)}</span>
             </div>
           </div>
 
           {post.cover ? (
             <div className="cover">
-              <Image src={post.cover} alt={post.title} fill sizes="760px" style={{ objectFit: "cover" }} />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={post.cover} alt={post.title} style={{ width: "100%", height: "auto", display: "block" }} />
             </div>
           ) : null}
 
