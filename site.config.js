@@ -2,7 +2,7 @@
 module.exports = {
   siteName: "INAO ARCHIVE",
   initials: "Juyeol Khang",
-  description: "For archive my puppy",
+  description: "For archive my love",
   footerNote: "All Rights Reserved Isnotanoption © 2026",
   email: "lrhkuunp@yonsei.ac.kr",
   instagram: "https://instagram.com/sochongsonyeon"
