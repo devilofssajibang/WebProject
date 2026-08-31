@@ -205,7 +205,6 @@ hr.hairline {
 
 .cover {
   width: 100%;
-  aspect-ratio: 3 / 2;
   overflow: hidden;
   margin-bottom: 32px;
   position: relative;
