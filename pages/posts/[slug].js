@@ -29,11 +29,11 @@ export default function Post({ post, blocks, posts }) {
 
           <div className="meta-table">
             <div className="meta-row">
-              <span>분류</span>
-              <span>{post.category || "기록"}</span>
+              <span>category</span>
+              <span>{post.category || "log"}</span>
             </div>
             <div className="meta-row">
-              <span>날짜</span>
+              <span>date</span>
               <span>{formatDate(post.date)}</span>
             </div>
           </div>
