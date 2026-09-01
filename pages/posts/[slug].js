@@ -21,18 +21,18 @@ export default function Post({ post, blocks, posts }) {
       <Layout posts={posts}>
         <div className="detail-body">
           <Link href="/" className="label" style={{ display: "inline-block", marginBottom: 32 }}>
-            ← 전체 기록으로
+            ← Back to Main
           </Link>
 
           <h1>{post.title}</h1>
 
           <div className="meta-table">
             <div className="meta-row">
-              <span>분류</span>
+              <span>category</span>
               <span>{post.category || "기록"}</span>
             </div>
             <div className="meta-row">
-              <span>날짜</span>
+              <span>date</span>
               <span>{formatDate(post.date)}</span>
             </div>
           </div>
