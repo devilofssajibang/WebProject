@@ -19,7 +19,7 @@ body {
 body {
   background-color: var(--bg);
   color: var(--ink);
-  font-family: var(--font-body), -apple-system, Helvetica, Arial, sans-serif;
+  font-family: "Noto Sans KR", -apple-system, Helvetica, Arial, sans-serif;
   font-size: 13px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -120,7 +120,6 @@ hr.hairline {
   grid-template-columns: 5fr 7fr;
   gap: 48px 32px;
   padding: 64px 56px;
-  align-items: start;
   position: relative;
 }
 
@@ -133,13 +132,14 @@ hr.hairline {
   left: calc(56px + (100% - 112px) * 5 / 12);
 }
 
-.col {
-  display: flex;
-  flex-direction: column;
-  gap: 56px;
+/* 홀수 번째 글은 왼쪽, 짝수 번째 글은 오른쪽 칼럼에 — DOM 순서(=날짜순)는
+   그대로 유지한 채 CSS Grid가 알아서 두 칼럼으로 배치합니다. */
+.cell:nth-child(even) {
+  grid-column: 2;
 }
 
-.col.offset {
+/* 오른쪽 칼럼의 첫 이미지만 살짝 아래로 내려서 비대칭적인 어긋남을 만듭니다. */
+.cell:nth-child(2) {
   margin-top: 88px;
 }
 
@@ -222,5 +222,19 @@ hr.hairline {
   }
   .detail-body {
     padding: 28px 20px;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 32px 20px;
+  }
+  .cell:nth-child(even) {
+    grid-column: 1;
+  }
+  .cell:nth-child(2) {
+    margin-top: 0;
+  }
+  .grid-line {
+    display: none;
   }
 }
